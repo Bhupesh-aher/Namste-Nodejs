@@ -28,3 +28,4 @@ var a = 10;
  console.log(globalThis === global );
  
  
+ 
