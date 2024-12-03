@@ -1,4 +1,4 @@
-require("./xyz.js") // one module into another
+// require("./xyz.js") // one module into another
 
 // require("./sum.js")
 
@@ -7,21 +7,41 @@ require("./xyz.js") // one module into another
 const {x, calculateSum} = require("./sum.js"); // object destructure
 
 
-var a = 10;
-var b = 20;
 
  
-// obj.calculateSum(a, b);
+// obj.calculateSum(10, 20);
 // console.log(obj.x);
 
-
+ 
 console.log(x);
-calculateSum(a, b);
+calculateSum(10, 20);
+
+console.log("app module");
 
 
 
- console.log("app module");
 
+
+// ES modules  -
+
+
+//  import {x, calculateSum } from "./sum.js";
+
+
+//  var a = 10;
+//  var b = 20;
+ 
+  
+//  // obj.calculateSum(a, b);
+//  // console.log(obj.x);
+ 
+  
+//  console.log(x);
+//  calculateSum(a, b);
+ 
+ 
+ 
+//   console.log("app module");
 
 
  
