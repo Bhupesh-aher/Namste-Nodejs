@@ -4,19 +4,25 @@
 
 // const obj = require("./sum.js");
 
-const {x, calculateSum} = require("./sum.js"); // object destructure
+// const {x, calculateSum} = require("./calculate/sum"); // object destructure
+// const {calculateMultiply} = require("./calculate/multiply")
 
+
+const {x, calculateMultiply, calculateSum} = require("./calculate")
+
+const data = require("./data.json")
 
 
  
-// obj.calculateSum(10, 20);
-// console.log(obj.x);
-
- 
-console.log(x);
 calculateSum(10, 20);
+calculateMultiply(10, 20);
+console.log(x);
+console.log(data);
 
-console.log("app module");
+
+
+
+
 
 
 

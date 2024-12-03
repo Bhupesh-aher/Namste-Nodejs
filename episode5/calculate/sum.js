@@ -16,9 +16,6 @@ const calculateSum = (a, b) => {
 
 // calculateSum(10, 20);
 
-
-
-
 module.exports = {x, calculateSum};
 
 
