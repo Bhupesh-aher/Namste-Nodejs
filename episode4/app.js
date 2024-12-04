@@ -1,31 +1,55 @@
-// console.log("namste node");
+// require("./xyz.js") // one module into another
 
-var a = 10;
- var b = 20;
+// require("./sum.js")
 
-//  console.log(a+b);
+// const obj = require("./sum.js");
+
+// const {x, calculateSum} = require("./calculate/sum"); // object destructure
+// const {calculateMultiply} = require("./calculate/multiply")
 
 
+const {x, calculateMultiply, calculateSum} = require("./calculate")
 
-// global object  in node js is "global" 
-//  console.log(global);
+const data = require("./data.json")
+
+
  
+calculateSum(10, 20);
+calculateMultiply(10, 20);
+console.log(x);
+console.log(data);
 
-//  empty object 
-// "this" is not equal to global object which is "global" in node js 
- console.log(this);
 
 
 
- // it is now pointing to global object and "globalThis" can be use in any browser and in node js basically in any js runtime enviornment
- // it is pointing to same global object
 
- console.log(globalThis);
+
+
+
+
+
+// ES modules  -
+
+
+//  import {x, calculateSum } from "./sum.js";
+
+
+//  var a = 10;
+//  var b = 20;
  
+  
+//  // obj.calculateSum(a, b);
+//  // console.log(obj.x);
+ 
+  
+//  console.log(x);
+//  calculateSum(a, b);
+ 
+ 
+ 
+//   console.log("app module");
 
 
-// it will give true here
- console.log(globalThis === global );
  
  
  
