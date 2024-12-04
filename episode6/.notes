@@ -1,4 +1,4 @@
-- so why we can't directly use the functions and variables module/files
+- so why we can't directly use the functions and variables of one module/files
   into another module/files
 
 - so in javascript if we have function and inside that function 
@@ -48,8 +48,7 @@ IIFE  -
     console.log(res);
     
 }
-
-module.exports = {calculateMultiply};
+    module.exports = {calculateMultiply};
 })()
 
 
@@ -85,31 +84,36 @@ module.exports = {calculateMultiply};
 
 
 
-how require("/path") works behind the scenes - 
+- how require("/path") function works behind the scenes - 
+- 5 steps that happens to get the module and execute the code
 
 1. Resolving the module 
-    - there can be different moudles 
-        - ("./calculate")
-        - ("./xyz.js")
-        - ("./localpath") 
+    - there can be different modules
+        - ("./localpath")  
+          - ("./calculate")
+          - ("./xyz.js")
         - ("./json")
-        - ("node:util")     
+        - ("node:module")
+          - ("node:util")     
 
 2. loading the module 
-    - file content is loaded accrording to file type ( ("./xyz.js"), ("./json"), ("node:util"))
+    - file content/code is loaded accrording to file type ( ("./xyz.js"), ("./json"), ("node:util"))
 
 3. wrap inside IIFE (compile step)
     - which we saw above 
 
-4. Evloution 
-    - here module.export is returned outside
+4. Evloution
+    - the code is executed
+    - and module.export is returned outside
 
 5. caching
     - then the module is cached
-
-- suppose xyz module is used by app.js, sum.js, multiply.js
-- then first time in app.js xyz module will follow above 4 steps and after that
-  it will cache the exeution of it 
-- so next time if xyz module is required by sum.js and multiply.js  
-  it will just returned from the cache
-- it will not do all the 4 steps, it will just return from cache
+      
+    - so the code of require("./xyz.js") will only run once
+    - it will cache the execution of it
+    - suppose xyz module is used by app.js, sum.js, multiply.js
+    - then first time in app.js xyz module will follow above 4 steps and after that
+      it will cache the exeution of it 
+    - so next time if xyz module is required by sum.js and multiply.js  
+      it will just returned from the cache
+    - it will not do all the 4 steps, it will just return from cache
